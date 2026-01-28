@@ -4,9 +4,9 @@ import { UpcomingShows } from './UpcomingShows.js';
 
 // --- Music Players ---
 const tracks = [
-    { title: "I Forgot My White Lighter At The 27 Club", src: "songs/27_club.mp3" },
-    { title: "Practice What You Preach", src: "songs/pwyp.mp3" },
-    { title: "Mortal Coil", src: "songs/mortal_coil.mp3" }
+    { title: "I Forgot My White Lighter At The 27 Club", src: "./songs/27_club.mp3" },
+    { title: "Practice What You Preach", src: "./songs/pwyp.mp3" },
+    { title: "Mortal Coil", src: "./songs/mortal_coil.mp3" }
 ];
 
 const playerContainer = document.getElementById('players');
