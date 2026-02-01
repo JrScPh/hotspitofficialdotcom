@@ -31,8 +31,8 @@ icons.forEach(iconData => new IconLink(iconContainer, iconData));
 
 // --- Upcoming Shows ---
 const shows = [
-    { date: "Jan 31", venue: "Montopolis Bridge", city: "Austin, TX" },
     { date: "Feb 27", venue: "Rio Mart", city: "Austin, TX" },
+    { date: "Feb 28", venue: "Montopolis Bridge", city: "Austin, TX" },
     { date: "Mar 2", venue: "The Far Out Lounge", city: "Austin, TX" },
     { date: "Mar 7", venue: "The Porch", city: "San Marcos, TX" }
 ];
