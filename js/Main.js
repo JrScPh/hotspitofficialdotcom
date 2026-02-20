@@ -4,8 +4,7 @@ import { UpcomingShows } from './UpcomingShows.js';
 
 // --- Music Players ---
 const tracks = [
-    { title: "I Forgot My White Lighter At The 27 Club", src: "songs/27_club.mp3" },
-    { title: "Mortal Coil", src: "songs/mortal_coil.mp3" }
+
 ];
 
 const playerContainer = document.getElementById('players');
@@ -21,9 +20,9 @@ tracks.forEach(track => {
 // --- Icon Links ---
 const icons = [
     { name: "Instagram", src: "icons/instagram.png", url: "https://instagram.com/hotspitofficial" },
-    { name: "Bandcamp", src: "icons/bandcamp.png", url: "https://itcamefrommars.bandcamp.com" },
+    { name: "Bandcamp", src: "icons/bandcamp.png", url: "https://hotspitofficial.bandcamp.com" },
     { name: "SoundCloud", src: "icons/soundcloud.png", url: "https://soundcloud.com/hotspitofficial" },
-    { name: "YouTube", src: "icons/youtube.png", url: "https://youtube.com/hotspitofficial" }
+    { name: "YouTube", src: "icons/youtube.png", url: "https://youtube.com/@hotspitofficial" }
 ];
 
 const iconContainer = document.querySelector(".icon-links");
