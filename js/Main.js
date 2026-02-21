@@ -4,7 +4,7 @@ import { UpcomingShows } from './UpcomingShows.js';
 
 // --- Music Players ---
 const tracks = [
-    { title: "Our demos will arrive on February 24th", src: "./songs/nonsense.mp3" }
+    { title: "Our demos will arrive on February 24th", src: "songs/nonsense.mp3" }
 ];
 
 const playerContainer = document.getElementById('players');
