@@ -128,17 +128,25 @@ body {
 
 .shows-table {
     width: 100%;
-    /* now matches section container */
     border-collapse: collapse;
-    background-color: #ff69b4;
-    color: #fff;
 }
 
-.shows-table th,
-.shows-table td {
-    border: 1px solid #8b0048;
+.shows-table th {
+    background-color: #ff61cf;
+    /* light pink header */
+    color: #ffffff;
+    /* black text for contrast */
     padding: 10px;
+    border: 1px solid #8b0048;
     text-align: left;
+}
+
+.shows-table td {
+    background-color: #cc0c92;
+    /* dark pink cells */
+    color: #fff;
+    padding: 10px;
+    border: 1px solid #8b0048;
 }
 
 h2 {
