@@ -2,9 +2,13 @@
 document.addEventListener("DOMContentLoaded", () => {
     const shows = [
         { date: "February 27th", venue: "Rio Mart", city: "Austin, TX" },
-        { date: "February 28th", venue: "Nontopolis Bridge", city: "Austin, TX" },
+        { date: "February 28th", venue: "Montopolis Bridge", city: "Austin, TX" },
         { date: "March 2nd", venue: "The Far Out Lounge", city: "Austin, TX" },
         { date: "March 7th", venue: "The Porch", city: "San Marcos, TX" },
+        { date: "April 4th", venue: "Jack's Roadhouse", city: "San Marcos, TX" },
+        { date: "April 10th", venue: "Emo Nac", city: "Nacogdoches, TX" },
+        { date: "May 17th", venue: "Private Park", city: "San Marcos, TX" },
+        { date: "June 24th", venue: "Crow Bar", city: "Austin, TX" }
     ];
 
     const tableContainer = document.createElement("div");
