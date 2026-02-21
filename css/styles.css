@@ -1,3 +1,5 @@
+/* Version: v0.1 */
+
 /* Reset */
 * {
     box-sizing: border-box;
@@ -10,8 +12,11 @@ body {
     width: 100%;
     height: 100%;
     font-family: system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
-    background-color: #18092b;
+    background: linear-gradient(to bottom, #0d0210, #1a041e, #0d0210);
+    /* Adjusted gradient colors to darker shades */
+    background-attachment: fixed;
     color: white;
+    /* Set all text to white by default */
 }
 
 /* Column Layout */
@@ -37,13 +42,34 @@ body {
 .logo {
     width: 100%;
     height: auto;
+    border-radius: 12px;
 }
 
 .site-tagline {
-    font-size: 0.9rem;
+    font-size: 1.5rem;
     letter-spacing: 0.05rem;
     text-transform: uppercase;
     text-align: center;
+}
+
+.email-link {
+    color: #ff69b4;
+    font-size: 0.9rem;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.email-link:hover {
+    text-decoration: underline;
+}
+
+.header-tagline {
+    font-size: 1.2rem;
+    font-weight: bold;
+    text-transform: uppercase;
+    text-align: center;
+    color: #ff69b4;
+    margin-bottom: 0.5rem;
 }
 
 /* Icon Links */
@@ -78,7 +104,7 @@ body {
     /* <-- border around the entire player */
     border-radius: 8px;
     /* optional, rounded corners */
-    background-color: rgb(13, 0, 27);
+    background-color: #4e003d;
     /* subtle background so border stands out */
 }
 
@@ -135,7 +161,7 @@ body {
     width: 100%;
     border-collapse: collapse;
     table-layout: fixed;
-    background-color: rgb(13, 0, 27);
+    background-color: #4e003d;
 }
 
 #shows th,
@@ -148,6 +174,67 @@ body {
 
 #shows th {
     font-weight: bold;
+}
+
+/* About Section */
+.about-section {
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+    margin: 2rem 0;
+}
+
+.about-container {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.about-image {
+    max-width: 40%;
+    height: auto;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.about-text {
+    max-width: 55%;
+    font-size: 1rem;
+    line-height: 1.5;
+    color: #ffffff;
+}
+
+/* Navigation Links */
+.navigation-links {
+    display: flex;
+    justify-content: center;
+    gap: 1.5rem;
+    margin-bottom: 1rem;
+    list-style: none;
+    padding: 0;
+}
+
+.navigation-links a {
+    text-decoration: none;
+    color: white;
+    font-size: 1rem;
+    font-weight: bold;
+    transition: color 0.3s;
+}
+
+.navigation-links a:hover {
+    color: #ff69b4;
+    /* Highlight color on hover */
+}
+
+/* Tagline and Email Section */
+.tagline-email {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.5rem;
+    margin-bottom: 1rem;
 }
 
 @media (max-width: 600px) {

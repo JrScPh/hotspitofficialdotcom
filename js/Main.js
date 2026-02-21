@@ -37,3 +37,40 @@ const shows = [
 ];
 
 new UpcomingShows("shows", shows);
+
+// --- About Section ---
+fetch('./assets/about.txt')
+    .then(response => response.text())
+    .then(text => {
+        const aboutTextContainer = document.querySelector('.about-text');
+        aboutTextContainer.innerHTML = `<h2>We are Hot Spit</h2><p>${text}</p>`;
+    })
+    .catch(error => console.error('Error loading about text:', error));
+
+// --- Navigation Links ---
+const navLinks = [
+    { text: "Music", target: "#players" },
+    { text: "Shows", target: "#shows" },
+    { text: "Contact", target: "#tagline-email" }
+];
+
+const navContainer = document.querySelector('.navigation-links');
+navContainer.innerHTML = navLinks.map((link, index) => {
+    const separator = index < navLinks.length - 1 ? ' | ' : '';
+    return `<a href="${link.target}" class="nav-link">${link.text}</a>${separator}`;
+}).join('');
+
+// Smooth scrolling for navigation links
+document.querySelectorAll('.nav-link').forEach(link => {
+    link.addEventListener('click', event => {
+        event.preventDefault();
+        const targetId = link.getAttribute('href').substring(1);
+        const targetElement = document.getElementById(targetId);
+        if (targetElement) {
+            window.scrollTo({
+                top: targetElement.offsetTop,
+                behavior: 'smooth'
+            });
+        }
+    });
+});

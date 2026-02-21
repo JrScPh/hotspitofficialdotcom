@@ -4,6 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="version" content="v0.1">
     <title>Hot Spit</title>
     <link rel="icon" href="favicon.ico">
     <link rel="stylesheet" href="css/styles.css">
@@ -14,10 +15,24 @@
 
     <main class="page-column">
 
+        <!-- Navigation Links -->
+        <nav class="navigation-links">
+            <ul>
+                <li><a href="#players" class="nav-link">Music</a></li>
+                <li><a href="#shows" class="nav-link">Shows</a></li>
+                <li><a href="#tagline-email" class="nav-link">Contact</a></li>
+            </ul>
+        </nav>
+
         <!-- Header -->
-        <header class="site-header">
-            <img src="assets/hotspitpurple.png" alt="Band logo" class="logo">
-            <p class="site-tagline">Queer Post-Hardcore from Austin, TX</p>
+        <header class="site-header" id="site-header">
+            <img src="assets/newheaderlogo.jpg" alt="Band logo" class="logo">
+
+            <!-- Tagline and Email Section -->
+            <section class="tagline-email" id="tagline-email">
+                <p class="site-tagline">ATX Queer Post-Hardcore</p>
+                <a href="mailto:hotspitofficial@gmail.com" class="email-link">hotspitofficial@gmail.com</a>
+            </section>
         </header>
 
         <!-- Icon Links -->
@@ -25,6 +40,17 @@
 
         <!-- Music Players -->
         <section id="players"></section>
+
+        <!-- About Section -->
+        <section id="about" class="about-section">
+            <div class="about-container">
+                <img src="./assets/crunch16.jpg" alt="About Hot Spit" class="about-image">
+                <div class="about-text">
+                    <h2>We are Hot Spit</h2>
+                    <p>Get spit on</p>
+                </div>
+            </div>
+        </section>
 
         <!-- Upcoming Shows -->
         <section id="shows">
