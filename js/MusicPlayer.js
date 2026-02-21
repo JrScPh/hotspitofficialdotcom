@@ -1,82 +1,77 @@
-// MusicPlayer.js
-export class MusicPlayer {
-    // Registry to manage multiple players
-    static allPlayers = [];
+document.addEventListener("DOMContentLoaded", () => {
+    // Select the players container (after the email)
+    const playersContainer = document.getElementById("players");
 
-    constructor(container, track) {
-        this.container = container;
-        this.audio = new Audio(track.src);
+    // Example tracks
+    const tracks = [
+        { title: "Demos arrive on February 24th", src: "songs/nonsense.mp3" },
+        { title: "Inventing the Question Mark", src: "songs/questionmark.mp3" }
+    ];
 
-        this.btn = container.querySelector(".play-btn");
-        this.icon = container.querySelector(".play-icon");
-        this.progress = container.querySelector(".progress");
-        this.title = container.querySelector(".track-title");
+    tracks.forEach(track => {
+        const playerContainer = document.createElement("div");
+        playerContainer.classList.add("music-player");
 
-        this.playIcon = "icons/play_button.png";
-        this.pauseIcon = "icons/pause_button.png";
+        // Play button
+        const playButtonContainer = document.createElement("div");
+        playButtonContainer.classList.add("play-button-container");
 
-        this.title.textContent = track.title;
-        this.progress.dragging = false;
+        const playButton = document.createElement("img");
+        playButton.src = "icons/play_button.png";
+        playButton.alt = "Play Button";
+        playButton.classList.add("play-button");
+        playButtonContainer.appendChild(playButton);
 
-        // Add this player to global registry
-        MusicPlayer.allPlayers.push(this);
+        // Progress bar and title
+        const progressBarTitleContainer = document.createElement("div");
+        progressBarTitleContainer.classList.add("progress-bar-title-container");
 
-        this.bindEvents();
-    }
+        const progressBar = document.createElement("input");
+        progressBar.type = "range";
+        progressBar.min = 0;
+        progressBar.max = 100;
+        progressBar.value = 0;
+        progressBar.classList.add("progress-bar");
 
-    bindEvents() {
-        // Play/Pause toggle
-        this.btn.addEventListener("click", () => this.toggle());
+        const songTitle = document.createElement("div");
+        songTitle.textContent = track.title;
+        songTitle.classList.add("song-title");
 
-        // Update progress bar as audio plays
-        this.audio.addEventListener("timeupdate", () => {
-            if (!isNaN(this.audio.duration)) {
-                // Always update progress, even on mobile
-                this.progress.value = (this.audio.currentTime / this.audio.duration) * 100;
+        progressBarTitleContainer.appendChild(progressBar);
+        progressBarTitleContainer.appendChild(songTitle);
+
+        // Append to player container
+        playerContainer.appendChild(playButtonContainer);
+        playerContainer.appendChild(progressBarTitleContainer);
+
+        // Append to the correct container in HTML
+        playersContainer.appendChild(playerContainer);
+
+        // Play/pause functionality
+        let isPlaying = false;
+        const audio = new Audio(track.src);
+
+        playButton.addEventListener("click", () => {
+            if (isPlaying) {
+                audio.pause();
+                playButton.src = "icons/play_button.png";
+            } else {
+                audio.play();
+                playButton.src = "icons/pause_button.png";
+            }
+            isPlaying = !isPlaying;
+        });
+
+        audio.addEventListener("timeupdate", () => {
+            if (!isNaN(audio.duration)) {
+                progressBar.value = (audio.currentTime / audio.duration) * 100;
             }
         });
 
-        // Ensure progress max is set
-        this.audio.addEventListener("loadedmetadata", () => {
-            this.progress.max = 100;
-        });
-
-        // Handle slider changes (desktop & mobile)
-        this.progress.addEventListener("input", () => {
-            if (!isNaN(this.audio.duration)) {
-                const pct = this.progress.value / 100;
-                this.audio.currentTime = pct * this.audio.duration;
+        progressBar.addEventListener("input", () => {
+            if (!isNaN(audio.duration)) {
+                audio.currentTime = (progressBar.value / 100) * audio.duration;
             }
         });
-
-        // Touch + Mouse dragging
-        const startDrag = () => (this.progress.dragging = true);
-        const endDrag = () => (this.progress.dragging = false);
-
-        this.progress.addEventListener("mousedown", startDrag);
-        this.progress.addEventListener("mouseup", endDrag);
-        this.progress.addEventListener("touchstart", startDrag);
-        this.progress.addEventListener("touchend", endDrag);
-    }
-
-    toggle() {
-        if (this.audio.paused) {
-            // Pause all other players
-            MusicPlayer.allPlayers.forEach(player => {
-                if (player !== this) {
-                    player.audio.pause();
-                    player.icon.src = player.playIcon;
-                    player.btn.setAttribute("aria-label", "Play");
-                }
-            });
-
-            this.audio.play();
-            this.icon.src = this.pauseIcon;
-            this.btn.setAttribute("aria-label", "Pause");
-        } else {
-            this.audio.pause();
-            this.icon.src = this.playIcon;
-            this.btn.setAttribute("aria-label", "Play");
-        }
-    }
-}
+    });
+});

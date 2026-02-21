@@ -1,29 +1,51 @@
-export class UpcomingShows {
-    constructor(containerId, showsArray) {
-        this.container = document.getElementById(containerId);
-        if (!this.container) { console.error("Container not found:", containerId); return; }
+// Function to create and load a table with upcoming shows
+document.addEventListener("DOMContentLoaded", () => {
+    const shows = [
+        { date: "February 27th", venue: "Rio Mart", city: "Austin, TX" },
+        { date: "February 28th", venue: "Nontopolis Bridge", city: "Austin, TX" },
+        { date: "March 2nd", venue: "The Far Out Lounge", city: "Austin, TX" },
+        { date: "March 7th", venue: "The Porch", city: "San Marcos, TX" },
+    ];
 
-        this.tableBody = this.container.querySelector("tbody");
-        if (!this.tableBody) { console.error("No tbody found in container:", containerId); return; }
+    const tableContainer = document.createElement("div");
+    tableContainer.classList.add("table-container");
 
-        this.shows = showsArray;
-        this.loadShows();
-    }
+    const title = document.createElement("h2");
+    title.textContent = "Upcoming Shows";
+    title.classList.add("table-title");
+    tableContainer.appendChild(title);
 
-    loadShows() {
-        this.tableBody.innerHTML = "";
-        this.shows.forEach(show => {
-            const row = document.createElement("tr");
-            row.appendChild(this.makeCell(show.date));
-            row.appendChild(this.makeCell(show.venue));
-            row.appendChild(this.makeCell(show.city));
-            this.tableBody.appendChild(row);
+    const table = document.createElement("table");
+    table.classList.add("shows-table");
+
+    const thead = document.createElement("thead");
+    const headerRow = document.createElement("tr");
+
+    ["Date", "Venue", "City"].forEach(headerText => {
+        const th = document.createElement("th");
+        th.textContent = headerText;
+        headerRow.appendChild(th);
+    });
+
+    thead.appendChild(headerRow);
+    table.appendChild(thead);
+
+    const tbody = document.createElement("tbody");
+
+    shows.forEach(show => {
+        const row = document.createElement("tr");
+
+        Object.values(show).forEach(value => {
+            const td = document.createElement("td");
+            td.textContent = value;
+            row.appendChild(td);
         });
-    }
 
-    makeCell(text) {
-        const td = document.createElement("td");
-        td.textContent = text;
-        return td;
-    }
-}
+        tbody.appendChild(row);
+    });
+
+    table.appendChild(tbody);
+    tableContainer.appendChild(table);
+
+    document.body.appendChild(tableContainer);
+});
