@@ -10,32 +10,46 @@
 
 <body>
     <!-- Header Logo -->
-    <img src="assets/headerlogo.jpg" alt="Hot Spit Logo" class="header-logo">
-
-    <!-- Tagline and Email -->
-    <div class="tagline">ATX QUEER POST-HARDCORE</div>
-    <div class="email">hotspitofficial@gmail.com</div>
-
-    <!-- Music Players -->
-    <div class="music-players-container" id="players">
-        <!-- Music players will be dynamically loaded here by JS -->
+    <div class="section-container">
+        <img src="assets/headerlogo.jpg" alt="Hot Spit Logo" class="header-logo">
     </div>
 
-    <!-- About Us Section -->
-    <div class="about-section">
-        <img src="assets/crunch16.jpg" alt="About Us Image" class="about-image">
-        <div class="about-text">
-            <!-- About Us text will be dynamically loaded by JS -->
+    <!-- Tagline and Email -->
+    <div class="section-container">
+        <div class="tagline">ATX QUEER POST-HARDCORE</div>
+        <div class="email">hotspitofficial@gmail.com</div>
+    </div>
+
+    <!-- Music Player Embed -->
+    <div class="section-container">
+        <div class="music-player-embed">
+            <iframe class="soundcloud-player" scrolling="no" frameborder="no" allow="autoplay"
+                src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/2270944034&color=%23ff0099&auto_play=false&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true&visual=false">
+            </iframe>
         </div>
     </div>
 
-    <!-- Upcoming Shows Table will be loaded dynamically by JS -->
+    <!-- About Us Section -->
+    <div class="section-container">
+        <div class="about-section">
+            <img src="assets/crunch16.jpg" alt="About Us Image" class="about-image">
+            <div class="about-text">
+                <h2>About Us</h2>
+                <p>An evolving rainbowcore band from Austin, TX blending a variety of inspirations into sonic
+                    experiences.
+                    We're searching for ways to bring people together for the sake of art and community. Our songs
+                    feature
+                    rich arrangements where we shine brighter together.</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Upcoming Shows Table (loaded by JS) -->
+    <div class="section-container" id="shows-container"></div>
 
     <!-- Scripts -->
     <script type="module" src="js/UpcomingShows.js"></script>
-    <script type="module" src="js/AboutText.js"></script>
     <script type="module" src="js/Icons.js"></script>
-    <script type="module" src="js/MusicPlayer.js"></script>
 </body>
 
 </html>
