@@ -1,13 +1,10 @@
-import { MusicPlayer } from '/MusicPlayer.js';
-import { IconLink } from '/IconLink.js';
-import { UpcomingShows } from '/UpcomingShows.js';
+import { MusicPlayer } from './MusicPlayer.js';
+import { IconLink } from './IconLink.js';
+import { UpcomingShows } from './UpcomingShows.js';
 
 // --- Music Players ---
 const tracks = [
-    {
-        title: "Our demos will arrive on February 24th",
-        src: "/songs/nonsense.mp3"   // FIXED: absolute path
-    }
+    { title: "Our demos will arrive on February 24th", src: "songs/nonsense.mp3" }
 ];
 
 const playerContainer = document.getElementById('players');
@@ -22,26 +19,10 @@ tracks.forEach(track => {
 
 // --- Icon Links ---
 const icons = [
-    {
-        name: "Instagram",
-        src: "/icons/instagram.png",  // FIXED
-        url: "https://instagram.com/hotspitofficial"
-    },
-    {
-        name: "Bandcamp",
-        src: "/icons/bandcamp.png",   // FIXED
-        url: "https://hotspitofficial.bandcamp.com"
-    },
-    {
-        name: "SoundCloud",
-        src: "/icons/soundcloud.png", // FIXED
-        url: "https://soundcloud.com/hotspitofficial"
-    },
-    {
-        name: "YouTube",
-        src: "/icons/youtube.png",    // FIXED
-        url: "https://youtube.com/@hotspitofficial"
-    }
+    { name: "Instagram", src: "icons/instagram.png", url: "https://instagram.com/hotspitofficial" },
+    { name: "Bandcamp", src: "icons/bandcamp.png", url: "https://hotspitofficial.bandcamp.com" },
+    { name: "SoundCloud", src: "icons/soundcloud.png", url: "https://soundcloud.com/hotspitofficial" },
+    { name: "YouTube", src: "icons/youtube.png", url: "https://youtube.com/@hotspitofficial" }
 ];
 
 const iconContainer = document.querySelector(".icon-links");
@@ -58,7 +39,7 @@ const shows = [
 new UpcomingShows("shows", shows);
 
 // --- About Section ---
-fetch('/assets/about.txt')  // FIXED
+fetch('./assets/about.txt')
     .then(response => response.text())
     .then(text => {
         const aboutTextContainer = document.querySelector('.about-text');
@@ -79,7 +60,7 @@ navContainer.innerHTML = navLinks.map((link, index) => {
     return `<a href="${link.target}" class="nav-link">${link.text}</a>${separator}`;
 }).join('');
 
-// Smooth scrolling
+// Smooth scrolling for navigation links
 document.querySelectorAll('.nav-link').forEach(link => {
     link.addEventListener('click', event => {
         event.preventDefault();
