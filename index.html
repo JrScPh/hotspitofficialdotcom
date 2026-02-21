@@ -9,19 +9,15 @@
 </head>
 
 <body>
-    <!-- Header Logo -->
+    <!-- Header -->
     <div class="section-container">
         <img src="headerlogo.jpg" alt="Hot Spit Logo" class="header-logo">
-    </div>
-
-    <!-- Tagline and Email -->
-    <div class="section-container">
-        <div class="tagline">ATX QUEER POST-HARDCORE</div>
+        <div class="tagline">ATX RAINBOWCORE</div>
         <div class="email">hotspitofficial@gmail.com</div>
     </div>
 
     <!-- Music Player Embed -->
-    <div class="section-container">
+    <div class="section-container" id="music">
         <div class="music-player-embed">
             <iframe class="soundcloud-player" scrolling="no" frameborder="no" allow="autoplay"
                 src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/2270944034&color=%23ff0099&auto_play=false&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true&visual=false">
@@ -36,10 +32,8 @@
             <div class="about-text">
                 <h2>About Us</h2>
                 <p>An evolving rainbowcore band from Austin, TX blending a variety of inspirations into sonic
-                    experiences.
-                    We're searching for ways to bring people together for the sake of art and community. Our songs
-                    feature
-                    rich arrangements where we shine brighter together.</p>
+                    experiences. We're searching for ways to bring people together for the sake of art and community.
+                    Our songs feature rich arrangements where we shine brighter together.</p>
             </div>
         </div>
     </div>
@@ -47,9 +41,13 @@
     <!-- Upcoming Shows Table (loaded by JS) -->
     <div class="section-container" id="shows-container"></div>
 
+    <!-- Icons Row (Socials) -->
+    <div class="section-container" id="socials"></div>
+
     <!-- Scripts -->
     <script type="module" src="js/UpcomingShows.js"></script>
     <script type="module" src="js/Icons.js"></script>
+    <script type="module" src="js/NavBar.js"></script>
 </body>
 
 </html>
