@@ -4,56 +4,114 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Hot Spit</title>
+
+    <!-- Primary SEO -->
+    <title>Hot Spit | Austin Rainbowcore Post-Hardcore Band</title>
+    <meta name="description"
+        content="Hot Spit is an Austin-based queer post-hardcore band and inventors of Rainbowcore. Listen to our music, explore upcoming shows, and experience the sound.">
+    <meta name="keywords"
+        content="Hot Spit, Hot Spit band, Hot Spit music, Rainbowcore, Austin band, queer post-hardcore band, Texas music">
+    <meta name="author" content="Hot Spit">
+
+    <!-- Canonical -->
+    <link rel="canonical" href="https://hotspitofficial.com/">
+
+    <!-- Open Graph -->
+    <meta property="og:type" content="music.group">
+    <meta property="og:title" content="Hot Spit | Inventors of Rainbowcore">
+    <meta property="og:description"
+        content="Austin-based queer post-hardcore band and inventors of Rainbowcore. Listen to Hot Spit music and see upcoming shows.">
+    <meta property="og:image" content="https://hotspitofficial.com/headerlogo.jpg">
+    <meta property="og:url" content="https://hotspitofficial.com/">
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Hot Spit | Austin Rainbowcore Band">
+    <meta name="twitter:description"
+        content="Hot Spit is a queer post-hardcore band from Austin, Texas. Explore our music and upcoming shows.">
+    <meta name="twitter:image" content="https://hotspitofficial.com/headerlogo.jpg">
 
     <!-- GLOBAL VERSION -->
     <script>
-        window.SITE_VERSION = "0.61"; // 🔁 Change this on deploy
+        window.SITE_VERSION = "0.62"; // 🔁 Change this on deploy
     </script>
 
-    <!-- Versioned CSS (data-href gets replaced) -->
+    <!-- Versioned CSS -->
     <link rel="stylesheet" data-href="css/styles.css">
+
+    <!-- Structured Data -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "MusicGroup",
+      "name": "Hot Spit",
+      "genre": ["Post-hardcore", "Rainbowcore"],
+      "url": "https://hotspitofficial.com/",
+      "image": "https://hotspitofficial.com/headerlogo.jpg",
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "Austin",
+        "addressRegion": "TX",
+        "addressCountry": "US"
+      },
+      "sameAs": [
+        "https://www.instagram.com/hotspitofficial",
+        "https://hotspitofficial.bandcamp.com",
+        "https://www.soundcloud.com/hotspitofficial",
+        "https://www.youtube.com/@hotspitofficial"
+      ]
+    }
+    </script>
+
 </head>
 
 <body>
 
-    <!-- Header -->
-    <div class="section-container">
-        <img data-src="headerlogo.jpg" alt="Hot Spit Logo" class="header-logo">
-        <div class="tagline">INVENTORS OF RAINBOWCORE</div>
-        <div class="email">hotspitofficial@gmail.com</div>
-    </div>
+    <header class="section-container">
+        <img data-src="headerlogo.jpg" alt="Hot Spit band logo" class="header-logo">
+        <h1>Hot Spit</h1>
+        <p class="tagline">Inventors of Rainbowcore</p>
+        <p class="email">hotspitofficial@gmail.com</p>
+    </header>
 
-    <!-- Music Player -->
-    <div class="section-container" id="music">
-        <div class="music-player-embed">
-            <iframe class="soundcloud-player" scrolling="no" frameborder="no" allow="autoplay"
-                src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/2270944034&color=%23ff0099&auto_play=false&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true&visual=false">
-            </iframe>
-        </div>
-    </div>
+    <main>
 
-    <!-- About -->
-    <div class="section-container">
-        <div class="about-section">
-            <img data-src="crunch.jpg" alt="About Us Image" class="about-image">
-            <div class="about-text">
-                <h2>We are Hot Spit</h2>
-                <p>
-                    A queer post-hardcore band from Austin, Texas blending diverse inspirations into sonic experiences.
-                    We started rocking out together at the beginning of 2025. As the year came to a close we
-                    officially founded Hot Spit. Our music is meant to move people physically and philosophically.
-                    Come out and see us so you can ponder the lyrics in the pit.
-                </p>
+        <!-- Music -->
+        <section class="section-container" id="music">
+            <h2>Listen to Hot Spit Music</h2>
+            <div class="music-player-embed">
+                <iframe class="soundcloud-player" scrolling="no" frameborder="no" allow="autoplay"
+                    src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/2270944034&color=%23ff0099&auto_play=false&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true&visual=false">
+                </iframe>
             </div>
-        </div>
-    </div>
+        </section>
 
-    <!-- Upcoming Shows -->
-    <div class="section-container" id="shows-container"></div>
+        <!-- About -->
+        <section class="section-container">
+            <div class="about-section">
+                <img data-src="crunch.jpg" alt="Hot Spit performing live in Austin" class="about-image">
+                <div class="about-text">
+                    <h2>About Hot Spit</h2>
+                    <p>
+                        Hot Spit is a queer post-hardcore band from Austin, Texas and the inventors of Rainbowcore.
+                        Formed in 2025, the band blends diverse influences into intense sonic experiences designed
+                        to move audiences physically and philosophically.
+                    </p>
+                </div>
+            </div>
+        </section>
 
-    <!-- Socials -->
-    <div class="section-container" id="socials"></div>
+        <!-- Upcoming Shows -->
+        <section class="section-container" id="shows-container">
+            <h2>Upcoming Hot Spit Shows</h2>
+        </section>
+
+        <!-- Socials -->
+        <section class="section-container" id="socials">
+            <h2>Follow Hot Spit</h2>
+        </section>
+
+    </main>
 
     <!-- Versioned JS Modules -->
     <script type="module" data-src="js/UpcomingShows.js"></script>
@@ -63,17 +121,14 @@
     <script>
         const version = window.SITE_VERSION;
 
-        // Apply version to stylesheets
         document.querySelectorAll('link[data-href]').forEach(link => {
             link.href = `${link.dataset.href}?v=${version}`;
         });
 
-        // Apply version to images
         document.querySelectorAll('img[data-src]').forEach(img => {
             img.src = `${img.dataset.src}?v=${version}`;
         });
 
-        // Apply version to module scripts
         document.querySelectorAll('script[type="module"][data-src]').forEach(script => {
             script.src = `${script.dataset.src}?v=${version}`;
         });
