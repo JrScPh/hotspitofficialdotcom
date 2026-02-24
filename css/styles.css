@@ -7,7 +7,7 @@
 
 body {
     font-family: Arial, sans-serif;
-    background: linear-gradient(to bottom, #471d32, #8b0048);
+    background: linear-gradient(to top, #460023, #8b0048);
     color: #fff;
     display: flex;
     flex-direction: column;
@@ -108,6 +108,10 @@ body {
 
 .about-text h2 {
     margin-bottom: 10px;
+}
+
+.about-text p {
+    line-height: 1.5;
 }
 
 /* Icons Row */
