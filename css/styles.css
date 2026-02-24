@@ -70,19 +70,6 @@ body {
     margin-bottom: 15px;
 }
 
-/* Music Player Embed */
-.music-player-embed {
-    width: 100%;
-    margin: 20px 0;
-}
-
-.music-player-embed iframe {
-    width: 100%;
-    height: 200px;
-    /* thinner player */
-    border-radius: 10px;
-}
-
 /* About Us Section */
 .about-section {
     display: flex;
