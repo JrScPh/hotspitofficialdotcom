@@ -6,20 +6,25 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Hot Spit</title>
 
-    <!-- Versioned CSS -->
-    <link rel="stylesheet" href="css/styles.css?v=0.5">
+    <!-- GLOBAL VERSION -->
+    <script>
+        window.SITE_VERSION = "0.6"; // 🔁 Change this on deploy
+    </script>
+
+    <!-- Versioned CSS (data-href gets replaced) -->
+    <link rel="stylesheet" data-href="css/styles.css">
 </head>
 
 <body>
 
     <!-- Header -->
     <div class="section-container">
-        <img src="headerlogo.jpg?v=0.5" alt="Hot Spit Logo" class="header-logo">
-        <div class="tagline">ATX QUEER POST-HARDCORE</div>
+        <img data-src="headerlogo.jpg" alt="Hot Spit Logo" class="header-logo">
+        <div class="tagline">INVENTORS OF RAINBOWCORE</div>
         <div class="email">hotspitofficial@gmail.com</div>
     </div>
 
-    <!-- Music Player Embed -->
+    <!-- Music Player -->
     <div class="section-container" id="music">
         <div class="music-player-embed">
             <iframe class="soundcloud-player" scrolling="no" frameborder="no" allow="autoplay"
@@ -28,10 +33,10 @@
         </div>
     </div>
 
-    <!-- About Us Section -->
+    <!-- About -->
     <div class="section-container">
         <div class="about-section">
-            <img src="crunch.jpg?v=0.5" alt="About Us Image" class="about-image">
+            <img data-src="crunch.jpg" alt="About Us Image" class="about-image">
             <div class="about-text">
                 <h2>We are Hot Spit</h2>
                 <p>
@@ -44,15 +49,35 @@
         </div>
     </div>
 
-    <!-- Upcoming Shows Table -->
+    <!-- Upcoming Shows -->
     <div class="section-container" id="shows-container"></div>
 
-    <!-- Icons Row -->
+    <!-- Socials -->
     <div class="section-container" id="socials"></div>
 
     <!-- Versioned JS Modules -->
-    <script type="module" src="js/UpcomingShows.js?v=0.5"></script>
-    <script type="module" src="js/Icons.js?v=0.5"></script>
+    <script type="module" data-src="js/UpcomingShows.js"></script>
+    <script type="module" data-src="js/Icons.js"></script>
+
+    <!-- VERSION PROPAGATION BOOTSTRAP -->
+    <script>
+        const version = window.SITE_VERSION;
+
+        // Apply version to stylesheets
+        document.querySelectorAll('link[data-href]').forEach(link => {
+            link.href = `${link.dataset.href}?v=${version}`;
+        });
+
+        // Apply version to images
+        document.querySelectorAll('img[data-src]').forEach(img => {
+            img.src = `${img.dataset.src}?v=${version}`;
+        });
+
+        // Apply version to module scripts
+        document.querySelectorAll('script[type="module"][data-src]').forEach(script => {
+            script.src = `${script.dataset.src}?v=${version}`;
+        });
+    </script>
 
 </body>
 

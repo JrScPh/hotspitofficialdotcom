@@ -108,6 +108,10 @@ body {
 
 .about-text h2 {
     margin-bottom: 10px;
+    white-space: nowrap;
+    /* Prevent wrapping */
+    font-size: clamp(18px, 3vw, 28px);
+    /* Responsive scaling */
 }
 
 .about-text p {
