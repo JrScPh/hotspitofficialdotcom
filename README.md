@@ -1,46 +1,62 @@
-# Hot Spit - Band Website (MVP)
+# Hot Spit — Band Website
 
-A lightweight, mobile-first band website built from scratch using HTML, CSS, and JavaScript. This project demonstrates dynamic music players, social media integration, and upcoming shows management — designed for easy customization and extensibility.
+A mobile-first, lightweight static website built from scratch in vanilla HTML, CSS, and JavaScript — no frameworks, no dependencies, no bloat.
 
-> ⚠️ **Note:** Some links and media on this MVP website are placeholders for demonstration purposes and may not be live on external platforms.
-
----
-
-## Live Demo
-
-Check out the website live on GitHub Pages: [Hot Spit Website](https://jrscph.github.io/hotspitofficialdotcom/)
+The project was motivated by a real UX problem: local bands typically either overwhelm visitors with link aggregators (option paralysis) or point to a single platform like Spotify (too little context). This site is designed as a focused hub that loads fast on legacy and low-end mobile devices while giving visitors everything they need in one place — music, shows, social links, and press info.
 
 ---
 
-## Features
+## Problem Solved
 
-- **Dynamic Music Players**  
-  Play, pause, and track progress for multiple songs with independent controls.
-  
-- **Social Media Icons**  
-  Automatically generates social media links from a data structure.
+Most local band web presences fall into one of two failure modes:
 
-- **Upcoming Shows Table**  
-  Add or modify shows dynamically using JavaScript objects.
+- **Too much:** Link aggregators like Linktree dump a wall of options on a distracted mobile user
+- **Too little:** A single Spotify or Instagram link provides no narrative or context
 
-- **Mobile-first, Lightweight Design**  
-  Optimized for low memory and quick load times on any device.
-
-- **Template System**  
-  Music players and icon links use HTML `<template>` elements for easy duplication.
+This site is a purpose-built middle ground — a mini EPK and discovery page optimized for the doomscrolling attention span.
 
 ---
 
-## Getting Started
+## Technical Approach
 
-### Prerequisites
+- **Zero frameworks** — pure HTML, CSS, and JavaScript only
+- **Mobile-first layout** — designed for small screens first, scales up naturally
+- **Legacy device optimization** — minimal asset weight, no render-blocking resources
+- **Cache busting via version propagation** — a single `SITE_VERSION` constant appended as a query parameter to all versioned assets at runtime, avoiding stale cache issues without a build tool
+- **Lazy asset loading** — images and scripts use `data-src` attributes resolved at runtime to defer loading
+- **Modular JS** — shows and social icons are driven by JS modules (`UpcomingShows.js`, `Icons.js`) keeping the HTML clean and data easy to update
+- **SEO and structured data** — Open Graph, Twitter Card, and Schema.org `MusicGroup` markup included for discoverability
 
-No server is required — works with any static hosting. Recommended modern browser.
+---
 
-### Running Locally
+## Structure
 
-1. Clone the repository:
+```
+/
+├── index.html
+├── css/
+│   └── styles.css
+├── js/
+│   ├── UpcomingShows.js
+│   └── Icons.js
+└── assets/
+    └── (images)
+```
+
+---
+
+## Running Locally
+
+No build step or server required — works with any static host or locally in a browser.
 
 ```bash
 git clone https://github.com/yourusername/hotspit-website.git
 cd hotspit-website
+open index.html
+```
+
+---
+
+## Live Site
+
+[hotspitofficial.com](https://hotspitofficial.com)
